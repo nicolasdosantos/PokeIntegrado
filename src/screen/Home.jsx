@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Header from "../Components/Header"
-import "./Home.css"
+import "../styles/Home.css"
 import logo from '../assets/logo_pokedex-removebg-preview 2.svg'
 
 

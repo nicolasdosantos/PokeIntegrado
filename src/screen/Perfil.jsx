@@ -1,5 +1,5 @@
 import Header from "../Components/Header";
-import css from "./Perfil.module.css";
+import css from "../styles/Perfil.module.css";
 
 function Perfil() {
     return (

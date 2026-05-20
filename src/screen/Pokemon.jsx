@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import Header from "../Components/Header"
-import "./Pokemon.css"
+import "../styles/Pokemon.css"
 import colors from "../ultilits/pokemonCor"
 import Geracao from "../ultilits/geracao"
 

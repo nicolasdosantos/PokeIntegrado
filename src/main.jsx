@@ -8,6 +8,7 @@ import Detalhes from './screen/Detalhes.jsx'
 import Login from './screen/Login.jsx'
 import Cadastro from "./screen/Cadastro"
 import Perfil from "./screen/Perfil"
+import Favoritos from "./screen/Favoritos"
 
 
 createRoot(document.getElementById('root')).render(
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/" element={<Login />} />
       <Route path="/cadastro" element={<Cadastro />} />
       <Route path="/perfil" element={<Perfil />} />
+      <Route path="/favoritos" element={<Favoritos />} />
       <Route path="*" element={<h1>404 - Página Não Encontrada</h1>} />
 
     </Routes>

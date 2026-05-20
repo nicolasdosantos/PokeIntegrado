@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 
 import Header from "../Components/Header"
-import './Aleatorio.css'
+import '../styles/Aleatorio.css'
 
 import colors from "../ultilits/pokemonCor"
 import Geracao from "../ultilits/geracao"

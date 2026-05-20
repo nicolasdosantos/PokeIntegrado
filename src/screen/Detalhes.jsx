@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import axios from "axios"
 
 import Header from "../Components/Header"
-import "./Detalhes.css"
+import "../styles/Detalhes.css"
 
 import colors from "../ultilits/pokemonCor"
 import Geracao from "../ultilits/geracao"
