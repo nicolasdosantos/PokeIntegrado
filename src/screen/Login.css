@@ -1,0 +1,169 @@
+:root{
+    --vermelho: #fc1f1f;
+}
+
+.login-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-login{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50vw;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 65px 20px rgb(112 110 110 / 45%);
+    border: none;
+}
+
+.esq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #fc1f1f;
+    height: 100%;
+}
+
+.dir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dir input{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    padding-left: 10px;
+}
+
+.input-login{
+    position: relative;
+    width: 80%;
+}
+
+.input-login input{
+    width: 92%;
+    padding: 5px 0px 5px 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: medium;
+}
+
+.input-login input:focus{
+    border: 2px solid var(--vermelho);
+}
+
+.icone-input{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.titulo-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.titulo-login h1{
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.titulo-login img{ 
+    width: 45px;
+    height: 45px;
+}
+
+.btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dir .btns .login .entrar{
+    width: 82%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--vermelho);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dir .btns .login .entrar:hover{
+    background-color: #d81717;
+    color: #fff;
+}
+
+.cadastro {
+    font-size: 18px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+
+.cadastro:focus,
+.cadastro:hover {
+    color: rgb(0, 0, 0);
+}
+
+.cadastro:focus:after,
+.cadastro:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.cadastro:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
