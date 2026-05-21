@@ -77,6 +77,7 @@
     width: 50vw;
     gap: 20px;
     overflow-y: auto;
+    text-align: center;
 }
 
 .dir .cardPokemon {
@@ -91,6 +92,7 @@
     height: 280px;
     width: 45vw;
     justify-content: space-evenly;
+    animation: aparecer 0.4s ease;
 }
 
 .dir .cardPokemon:hover {
@@ -116,4 +118,19 @@
 
 .dir .remover button:hover{
     transform: scale(1.08);
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
 }

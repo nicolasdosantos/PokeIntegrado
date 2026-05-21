@@ -79,6 +79,7 @@ function Favoritos() {
                     <h2 className="text-4xl font-bold mb-5">
                         Pesquisar 🔍
                     </h2>
+                    <p>(Digite o nome ou ID de um Pokémon)</p>
 
                     <div className="flex gap-3">
 
@@ -113,7 +114,7 @@ function Favoritos() {
                                     alt=""
                                 />
 
-                                <h2>{dados.nome}</h2>
+                                <h2>    {dados.nome.charAt(0).toUpperCase() + dados.nome.slice(1)}</h2>
 
                                 <p><strong>ID:</strong> {dados.id}</p>
 
@@ -139,6 +140,7 @@ function Favoritos() {
                     <h2 className="text-4xl font-bold mb-5">
                         Favoritos ⭐
                     </h2>
+                    <p>(Seus Pokémon favoritos)</p>
 
                     <div className="flex flex-wrap gap-5 mt-10 justify-center items-center">
 
@@ -150,7 +152,7 @@ function Favoritos() {
                                     <div>
                                         <img src={item.imagem} alt="" />
 
-                                        <h2>{item.nome}</h2>
+                                        <h2>    {item.nome.charAt(0).toUpperCase() + item.nome.slice(1)}</h2>
                                     </div>
                                     <div>
                                         <p><strong>ID:</strong> {item.id}</p>
