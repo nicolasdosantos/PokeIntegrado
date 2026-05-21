@@ -11,7 +11,7 @@ const colors = {
     dragon: '#76e',
     psychic: '#f59',
     flying: '#89f',
-    fighting: '#b54',
+    fighting: 'rgb(223, 105, 84)',
     normal: '#aa9',
     ghost: '#7b62a3',
     dark: '#5b5a5a',

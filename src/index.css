@@ -13,6 +13,12 @@
   padding: 0px;
   text-decoration: none;
   font-family: "Quicksand", sans-serif;
+
+}
+
+button{
+    cursor: pointer;
+
 }
 
 :root{
