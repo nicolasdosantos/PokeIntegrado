@@ -1,0 +1,186 @@
+.esq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    width: 50vw;
+    height: 88vh;
+    gap: 20px;
+
+}
+
+
+.esq .cardPokemon {
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    height: 330px;
+    width: 285px;
+    justify-content: space-evenly;
+}
+
+.esq .cardPokemon:hover {
+    transform: scale(1.05);
+}
+
+.esq .cardPokemon img {
+    width: 100px;
+}
+
+.esq .cardPokemon h3 {
+    margin: 10px 0 5px;
+    text-transform: capitalize;
+}
+
+.esq .cardPokemon p {
+    margin: 3px 0;
+}
+
+
+.esq input {
+    padding: 10px;
+    width: 200px;
+    font-size: medium;
+}
+
+.esq button {
+    padding: 10px 20px;
+    background-color: #fc1f1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.esq .cardPokemon button {
+    background-color: rgb(7, 199, 7);
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.esq .cardPokemon button:hover {
+    transform: scale(1.15);
+}
+
+.dir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    width: 50vw;
+    gap: 20px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.dir .cardPokemon {
+    border-radius: 12px;
+    padding: 15px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    height: 280px;
+    width: 45vw;
+    justify-content: space-evenly;
+    animation: aparecer 0.4s ease;
+}
+
+.dir .cardPokemon:hover {
+    transform: scale(1.05);
+}
+
+.dir .cardPokemon img {
+    width: 150px;
+}
+
+.dir .remover button{
+    width: 40vw;
+    padding: 10px 20px;
+    background-color: #fc1f1f;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: medium;
+    transition: 0.3s;
+}
+
+.dir .remover button:hover{
+    transform: scale(1.08);
+}
+
+.descBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.descBox input{
+    width: 80%;
+    padding: 8px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+}
+
+.descBox button{
+    width: 80%;
+    padding: 10px 20px;
+    background-color: rgb(7, 199, 7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: medium;
+    transition: 0.3s;
+}
+
+.desc {
+    width: 100%;
+    max-width: 250px;
+    max-height: 28%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    overflow-y: auto;
+}
+
+.desc p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.desc {
+    scrollbar-width: none;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
