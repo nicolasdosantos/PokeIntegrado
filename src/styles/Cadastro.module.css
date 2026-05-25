@@ -49,11 +49,11 @@
 
 .inputCadastro{
     position: relative;
-    width: 80%;
+    width: 83%;
 }
 
 .inputCadastro input{
-    width: 92%;
+    width: 100%;
     padding: 15px 0px 15px 40px;
     border-radius: 10px;
     border: 1px solid #ccc;

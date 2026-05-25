@@ -41,11 +41,12 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    height: 100%;
 }
 
 .dir input{
-    width: 80%;
-    height: 40px;
+    width: 83%;
+    height: 100%;
     border-radius: 5px;
     border: none;
     background-color: #f0f0f0;
@@ -54,11 +55,12 @@
 
 .input-login{
     position: relative;
-    width: 80%;
+    width: 83%;
 }
 
 .input-login input{
-    width: 92%;
+    height: 5vh;
+    width: 100%;
     padding: 5px 0px 5px 40px;
     border-radius: 10px;
     border: 1px solid #ccc;

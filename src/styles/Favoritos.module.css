@@ -108,7 +108,7 @@
     padding: 10px 20px;
     background-color: #fc1f1f;
     color: white;
-    border: 2px solid black;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
@@ -120,6 +120,56 @@
     transform: scale(1.08);
 }
 
+.descBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.descBox input{
+    width: 80%;
+    padding: 8px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+}
+
+.descBox button{
+    width: 80%;
+    padding: 10px 20px;
+    background-color: rgb(7, 199, 7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: medium;
+    transition: 0.3s;
+}
+
+.desc {
+    width: 100%;
+    max-width: 250px;
+    max-height: 28%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    overflow-y: auto;
+}
+
+.desc p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.desc {
+    scrollbar-width: none;
+}
 
 @keyframes aparecer {
 

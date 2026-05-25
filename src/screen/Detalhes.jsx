@@ -43,7 +43,13 @@ function Detalhes() {
     let cor = colors[tipo]
 
     return (
-        <div>
+        <div className="
+            bg-[#f0f0f0]
+            dark:bg-[#121212]
+            min-h-screen
+            transition-all
+            duration-300
+        ">
             <Header />
             <div className="main-detalhes">
                 <div className="card-detalhes" style={{ backgroundColor: cor }} >

@@ -36,11 +36,17 @@ function Pokemon() {
     }, [limite])
 
     return (
-        <div>
+        <div className="
+            bg-[#f0f0f0]
+            dark:bg-[#121212]
+            min-h-screen
+            transition-all
+            duration-300
+        ">
             <Header />
             <div className="main-poke">
-                <h1 style={{paddingTop: "10px"}}>Lista de Pokémon 📝</h1>
-                <p>(Clique no card para mais informações do poekmon!)</p>
+                <h1  className="dark:text-white" style={{paddingTop: "10px"}}>Lista de Pokémon 📝</h1>
+                <p  className="dark:text-white" >(Clique no card para mais informações do poekmon!)</p>
                 <div className="grid-poke">
                     {lista
                         .sort((a, b) => a.id - b.id)

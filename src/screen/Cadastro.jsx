@@ -1,25 +1,50 @@
 import css from "../styles/Cadastro.module.css"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import axios from "axios"
 
-import pikachu from "../assets/pikachu.gif"
-import totodile from "../assets/totodile.gif"
-import eevee from "../assets/eevee2.gif" 
-
+import eevee from "../assets/eevee2.gif"
 import pokeball from "../assets/pokeball.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
+import { faCircleUser, faLock } from '@fortawesome/free-solid-svg-icons'
 
 function Cadastro() {
 
-  const [login, setLogin] = useState("")
-  const [usuario, setUsuario] = useState("")
+  const [nome, setNome] = useState("")
+  const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [confirmarSenha, setConfirmarSenha] = useState("")
 
   const navigate = useNavigate()
+
+  function cadastrar() {
+
+    if(senha !== confirmarSenha){
+      alert("senhas diferentes")
+      return
+    }
+
+    axios.post("http://localhost/PokeApi/cadastro.php", {
+      nome: nome,
+      email: email,
+      senha: senha
+    })
+    .then(res => {
+
+      if(res.data.success){
+        alert("cadastrado com sucesso")
+        navigate("/")
+      }else{
+        alert("email já existe")
+      }
+
+    })
+    .catch(() => {
+      alert("erro no servidor")
+    })
+
+  }
 
   return (
     <div className={css.cadastroContainer}>
@@ -33,51 +58,39 @@ function Cadastro() {
         <div className={css.dir}>
 
           <div className={css.tituloCadastro}>
-
             <h1>Cadastro</h1>
-
             <img src={pokeball} alt="" />
-
           </div>
 
           <div className={css.inputCadastro}>
 
-            <FontAwesomeIcon
-              icon={faCircleUser}
-              className={css.iconeInput}
-            />
+            <FontAwesomeIcon icon={faCircleUser} className={css.iconeInput} />
 
             <input
               type="text"
-              placeholder="Login"
-              value={login}
-              onChange={(e) => setLogin(e.target.value)}
+              placeholder="Nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
             />
 
           </div>
 
           <div className={css.inputCadastro}>
 
-            <FontAwesomeIcon
-              icon={faCircleUser}
-              className={css.iconeInput}
-            />
+            <FontAwesomeIcon icon={faCircleUser} className={css.iconeInput} />
 
             <input
               type="text"
-              placeholder="Usuário"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
           </div>
 
           <div className={css.inputCadastro}>
 
-            <FontAwesomeIcon
-              icon={faLock}
-              className={css.iconeInput}
-            />
+            <FontAwesomeIcon icon={faLock} className={css.iconeInput} />
 
             <input
               type="password"
@@ -90,10 +103,7 @@ function Cadastro() {
 
           <div className={css.inputCadastro}>
 
-            <FontAwesomeIcon
-              icon={faLock}
-              className={css.iconeInput}
-            />
+            <FontAwesomeIcon icon={faLock} className={css.iconeInput} />
 
             <input
               type="password"
@@ -107,20 +117,18 @@ function Cadastro() {
           <div className={css.btns}>
 
             <div className={css.cadastroBtn}>
-              <button className={css.cadastrar}>
+              <button className={css.cadastrar} onClick={cadastrar}>
                 Cadastrar
               </button>
             </div>
 
             <div className={css.loginBtn}>
-
               <button
                 className={css.login}
                 onClick={() => navigate("/")}
               >
                 Já possui conta? Faça login!
               </button>
-
             </div>
 
           </div>
