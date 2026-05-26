@@ -9,13 +9,11 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--vermelho);
 
 }
 
 .nav button {
     font-size: 18px;
-    color: rgb(95, 95, 95);
     cursor: pointer;
     position: relative;
     border: none;

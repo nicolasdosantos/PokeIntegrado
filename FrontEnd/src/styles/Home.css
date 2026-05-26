@@ -24,12 +24,12 @@
 .poke-pesq {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 15px;
 }
 
 .poke-pesq input {
 
-    height: 25px;
+    height: 35px;
     width: 15vw;
     padding: 1px 0px;
     border: none;
@@ -38,8 +38,9 @@
 }
 
 .poke-pesq input:focus{
+    outline: none;
+    border-bottom: 2px solid var(--vermelho);
     transition: 1s;
-    border: 1px solid red;
 
 }
 

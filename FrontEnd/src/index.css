@@ -3,10 +3,11 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 *{
   margin: 0px;

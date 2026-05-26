@@ -11,69 +11,81 @@ function Perfil() {
 
         const user = JSON.parse(localStorage.getItem("usuario"))
 
-        if(user){
+        if (user) {
 
             axios.get("http://localhost/PokeApi/usuario.php?id=" + user.id)
-            .then(res => {
-                setUsuario(res.data)
-            })
+                .then(res => {
+                    setUsuario(res.data)
+                })
 
         }
 
     }, [])
 
     return (
-        <div className="min-h-screen w-full bg-slate-50 pb-12">
+
+        <div className="
+            min-h-screen
+            bg-[#f0f0f0]
+            dark:bg-[#121212]
+            transition-all
+            duration-300
+        ">
+
             <Header />
 
-            <div className={css.container}>
-                <div className={css.cartao}>
+            <div className={css.main}>
 
-                    <div className={css.topoGradiente}></div>
+                <div className={css.container}>
 
-                    <div className={css.fotoPerfil}>
-                        <div className={css.pokebola}>
-                            <div className={css.parteVermelha}></div>
-                            <div className={css.linhaPreta}></div>
-                            <div className={css.botaoMeio}>
-                                <div className={css.centroBotao}></div>
-                            </div>
-                            <div className={css.parteBranca}></div>
-                        </div>
-                    </div>
+                    <div className={css.banner}>
 
-                    <div className={css.dadosPrincipais}>
-                        <h2>{usuario.nome}</h2>
-                    </div>
+                        <div className={css.foto}>
 
-                    <div className={css.linhaDivisoria}></div>
-
-                    <div className={css.listaInfo}>
-
-                        <div className={css.campo}>
-                            <span className={css.tituloCampo}>Username</span>
-                            <div className={css.caixaTexto}>
-                                <span>{usuario.nome}</span>
-                            </div>
-                        </div>
-
-                        <div className={css.campo}>
-                            <span className={css.tituloCampo}>Email</span>
-                            <div className={css.caixaTexto}>
-                                <span>{usuario.email}</span>
-                            </div>
-                        </div>
-
-                        <div className={css.campo}>
-                            <span className={css.tituloCampo}>Password</span>
-                            <div className={css.caixaTexto}>
-                                <span>••••••••••••</span>
-                            </div>
                         </div>
 
                     </div>
+
+                    <div className={css.card}>
+
+                        <h1>
+                            Perfil 👤
+                        </h1>
+
+                        <div className={css.info}>
+
+                            <p>
+                                <strong>Registro:</strong> {usuario.id}
+                            </p>
+
+                            <p>
+                                <strong>Nome:</strong> {usuario.nome}
+                            </p>
+
+                            <p>
+                                <strong>Email:</strong> {usuario.email}
+                            </p>
+
+                        </div>
+
+                        <div className={css.botoes}>
+
+                            <button>
+                                Editar Perfil
+                            </button>
+
+                            <button>
+                                Trocar Foto
+                            </button>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
     );
 }

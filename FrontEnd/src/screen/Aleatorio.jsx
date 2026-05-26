@@ -42,13 +42,19 @@ function Aletorio(){
     }, [])
 
     return(
-        <div>
+        <div className="
+            bg-[#f0f0f0]
+            dark:bg-[#121212]
+            min-h-screen
+            transition-all
+            duration-300
+        ">
 
             <Header />
 
-            <div className="main-random">
+            <div  className="main-random">
 
-                <h1>Surpreenda-se 🎲</h1>
+                <h1 className="dark:text-white">Surpreenda-se 🎲</h1>
 
                 {pokemon && (
 

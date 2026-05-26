@@ -1,4 +1,5 @@
 import { useState } from "react"
+import axios from "axios"
 import Header from "../Components/Header"
 import "../styles/Home.css"
 import logo from "../assets/logo_pokedex-removebg-preview 2.svg"
@@ -12,101 +13,181 @@ function Home() {
 
     function procurarPokemon() {
 
-        const url = "https://pokeapi.co/api/v2/pokemon/" + busca.toLowerCase()
+        if (busca == "") return
 
         setErro(false)
 
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro na busca")
-                }
-                return response.json()
-            })
-            .then(data => {
-                setPokemon(data)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${busca.toLowerCase()}`)
+
+            .then((resposta) => {
+
+                setPokemon(resposta.data)
+
             })
 
             .catch(() => {
+
                 setPokemon(null)
                 setErro(true)
+
             })
     }
 
     return (
-        <div>
+        <div className=" bg-[#f0f0f0] dark:bg-[#121212] min-h-screen 
+        transition-all duration-300">
+
             <Header />
-            <div className="main">
-                <div className="card">
+
+            <div className="main dark:text-white ">
+
+                <div className="
+                    card
+                    bg-white
+                    dark:bg-zinc-800
+                    transition-all
+                    duration-300
+                    
+                ">
+
                     <div className="titulo">
+
                         <h3>
                             Bem-Vindo ao Pokedex!
                         </h3>
+
                     </div>
+
                     <div className="poke-logo">
-                        <img src={logo} alt="logo"/>
+
+                        <img src={logo} alt="logo" />
+
                     </div>
+
                 </div>
 
-                <div className="card">
+                <div className="
+                    card
+                    bg-white
+                    dark:bg-zinc-800
+                    transition-all
+                    duration-300
+                ">
+
                     <div>
+
                         <h1>
                             Seja Bem vindo a PokeDex!
                         </h1>
+
                         <p>
                             Digite o nome ou ID do pokemon que deseja!
                         </p>
+
                     </div>
+
                     <div className="poke-pesq">
-                        <input type="text" placeholder="Digite aqui..." value={busca} onChange={(e) => setBusca(e.target.value)}/>
+
+                        <input
+                            type="text"
+                            placeholder="Digite aqui..."
+                            value={busca}
+                            onChange={(e) => setBusca(e.target.value)}
+                            className="
+                                dark:bg-zinc-900
+                                dark:text-white
+                                dark:border-zinc-700
+                            "
+                        />
+
                         <button onClick={procurarPokemon}>
                             Buscar
                         </button>
+
                     </div>
+
                     {erro && (
-                        <div className="erro">
+
+                        <div className="
+                            erro
+                            dark:bg-red-900
+                        ">
+
                             <p>
                                 ❌ Pokémon não encontrado!
                             </p>
+
                         </div>
+
                     )}
+
                     {pokemon && (
-                        <div className="poke-info">
-                            <img src={pokemon.sprites.front_default} alt={pokemon.name} style={{ width: "200px" }} />
+
+                        <div className="
+                            poke-info
+                            dark:text-white
+                        ">
+
+                            <img
+                                src={pokemon.sprites.front_default}
+                                alt={pokemon.name}
+                                style={{ width: "200px" }}
+                            />
+
                             <div>
+
                                 <div>
+
                                     <h2>
                                         {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                                     </h2>
+
                                     <p>
                                         <strong>ID:</strong> {pokemon.id}
                                     </p>
+
                                 </div>
+
                                 <div>
+
                                     <p>
                                         <strong>Altura:</strong> {pokemon.height / 10} m
                                     </p>
+
                                     <p>
                                         <strong>Peso:</strong> {pokemon.weight / 10} Kg
                                     </p>
+
                                 </div>
+
                                 <p>
+
                                     <strong>Tipos:</strong>
+
                                     {pokemon.types.map((t, index) => (
 
                                         <span key={index}>
                                             {" "}{t.type.name}
                                         </span>
+
                                     ))}
+
                                 </p>
+
                                 <p>
                                     <strong>Geração:</strong> {Geracao(pokemon.id)}
                                 </p>
+
                             </div>
+
                         </div>
+
                     )}
+
                 </div>
+
             </div>
+
         </div>
     )
 }

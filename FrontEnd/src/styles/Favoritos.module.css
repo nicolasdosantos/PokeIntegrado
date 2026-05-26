@@ -46,6 +46,9 @@
     padding: 10px;
     width: 200px;
     font-size: medium;
+    background: gainsboro;
+    border: none;
+    border-radius: 5px;
 }
 
 .esq button {
@@ -108,7 +111,7 @@
     padding: 10px 20px;
     background-color: #fc1f1f;
     color: white;
-    border: 2px solid black;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
