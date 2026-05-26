@@ -37,6 +37,7 @@ function Perfil() {
             <div className={css.main}>
 
                 <div className={css.container}>
+
                     <div className={css.banner}>
 
                         <div className={css.foto}>
@@ -80,8 +81,8 @@ function Perfil() {
                         </div>
 
                     </div>
-                </div>
 
+                </div>
 
             </div>
 

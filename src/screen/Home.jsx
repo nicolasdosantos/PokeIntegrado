@@ -34,18 +34,12 @@ function Home() {
     }
 
     return (
-        <div className="
-            bg-[#f0f0f0]
-            dark:bg-[#121212]
-            dark:text-white
-            min-h-screen
-            transition-all
-            duration-300
-        ">
+        <div className=" bg-[#f0f0f0] dark:bg-[#121212] min-h-screen 
+        transition-all duration-300">
 
             <Header />
 
-            <div className="main">
+            <div className="main dark:text-white ">
 
                 <div className="
                     card
@@ -53,6 +47,7 @@ function Home() {
                     dark:bg-zinc-800
                     transition-all
                     duration-300
+                    
                 ">
 
                     <div className="titulo">

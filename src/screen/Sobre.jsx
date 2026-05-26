@@ -10,8 +10,13 @@ function Sobre() {
             <Header />
 
             <div className={css.main}>
+                <div><h1>Sobre o projeto</h1></div>
+                <div>
+                    <div>TEXTO DO SOBRE</div>
+                    <div> IMAGEM / SPRITE</div>
+                </div>
 
-                <h1>Sobre o projeto</h1>
+                
             </div>
 
         </div>

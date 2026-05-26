@@ -98,19 +98,25 @@ function Favoritos() {
 
     return (
 
-        <div>
+        <div className="            ">
 
             <Header />
 
-            <div className="grid grid-cols-2 bg-[#f0f0f0] justify-items-center content-start text-center h-[93vh]">
+            <div className="grid grid-cols-2 bg-[#f0f0f0] justify-items-center content-start text-center h-[93vh] bg-[#f0f0f0]
+            dark:bg-[#121212]     
+
+            transition-all
+            duration-300">
 
                 <div className={css.esq}>
 
-                    <h2 className="text-4xl font-bold mb-5">
+                    <h2 className="text-4xl font-bold mb-5 dark:text-white">
                         Pesquisar 🔍
                     </h2>
 
-                    <p>(Digite o nome ou ID de um Pokémon)</p>
+                    <p className="dark:text-white">
+                        (Digite o nome ou ID de um Pokémon)
+                    </p>
 
                     <div className="flex gap-3">
 
@@ -118,7 +124,7 @@ function Favoritos() {
                             type="text"
                             value={pokemon}
                             onChange={(e) => setPokemon(e.target.value)}
-                            className="border border-gray-400 rounded-lg"
+                            className="border border-gray-400 rounded-lg dark:text-black"
                         />
 
                         <button onClick={buscarPokemon}>
@@ -138,7 +144,7 @@ function Favoritos() {
 
                                 <img src={dados.imagem} alt="" />
 
-                                <h2>
+                                <h2 >
                                     {dados.nome.charAt(0).toUpperCase() + dados.nome.slice(1)}
                                 </h2>
 
@@ -159,11 +165,13 @@ function Favoritos() {
 
                 <div className={css.dir}>
 
-                    <h2 className="text-4xl font-bold mb-5">
+                    <h2 className="text-4xl font-bold mb-5 dark:text-white">
                         Favoritos ⭐
                     </h2>
 
-                    <p>(Seus Pokémon favoritos)</p>
+                    <p className="dark:text-white">
+                        (Seus Pokémon favoritos)
+                    </p>
 
                     <div className="flex flex-wrap gap-5 mt-10 justify-center items-center">
 
@@ -177,11 +185,11 @@ function Favoritos() {
 
                                 <div className="grid grid-cols-3 justify-between items-center gap-10 h-[80%]">
 
-                                    <div>
+                                    <div className="flex flex-col items-center g-20">
                                         <img src={item.imagem} alt="" />
 
                                         <h2>
-                                            {item.nome.charAt(0).toUpperCase() + item.nome.slice(1)}
+                                            <strong>{item.nome.charAt(0).toUpperCase() + item.nome.slice(1)}</strong>
                                         </h2>
                                     </div>
 
