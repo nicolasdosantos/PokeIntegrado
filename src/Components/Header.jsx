@@ -1,11 +1,13 @@
 import './Header.css'
 import logo from '../assets/logo_pokedex-removebg-preview 2.svg'
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Header() {
 
     const [dark, setDark] = useState(false)
+    const navigate = useNavigate()
+
 
     useEffect(() => {
 
@@ -34,6 +36,15 @@ function Header() {
         )
 
     }
+
+    function sair() {
+
+        localStorage.removeItem("usuario")
+
+        navigate("/")
+
+    }
+
 
     return (
         <div className="dark:bg-[#9b0000]">
@@ -70,9 +81,9 @@ function Header() {
                     {dark ? "☀️" : "🌙"}
                 </button>
 
-                <Link to="/">
-                    <button>Sair</button>
-                </Link>
+                <button onClick={sair}>
+                    Sair
+                </button>
 
             </nav>
         </div>

@@ -24,22 +24,14 @@ function Perfil() {
 
     return (
 
-        <div className="
-            min-h-screen
-            bg-[#f0f0f0]
-            dark:bg-[#121212]
-            transition-all
-            duration-300
-        ">
+        <div className=" min-h-screen bg-[#f0f0f0] 
+        dark:bg-[#121212] transition-all duration-300 ">
 
             <Header />
 
             <div className={css.main}>
-
                 <div className={css.container}>
-
                     <div className={css.banner}>
-
                         <div className={css.foto}>
 
                         </div>
@@ -53,39 +45,14 @@ function Perfil() {
                         </h1>
 
                         <div className={css.info}>
-
-                            <p>
-                                <strong>Registro:</strong> {usuario.id}
-                            </p>
-
-                            <p>
-                                <strong>Nome:</strong> {usuario.nome}
-                            </p>
-
-                            <p>
-                                <strong>Email:</strong> {usuario.email}
-                            </p>
-
-                        </div>
-
-                        <div className={css.botoes}>
-
-                            <button>
-                                Editar Perfil
-                            </button>
-
-                            <button>
-                                Trocar Foto
-                            </button>
-
+                            <p> <strong>Registro:</strong> {usuario.id} </p>
+                            <p> <strong>Nome:</strong> {usuario.nome} </p>
+                            <p> <strong>Email:</strong> {usuario.email} </p>
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     );
 }
